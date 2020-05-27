@@ -61,7 +61,7 @@ If the Tekton Dashboard has been installed into a namespace other than "tekton-p
     If the call back URL is not determined yet in Amazon EKS environment, replace YOUR_IP_ADDRESS with a dummy address.  It will be replaced in the step in the [Getting Started](https://github.com/tektoncd/experimental/blob/master/webhooks-extension/docs/GettingStarted.md) guide.
 
     ```bash
-    curl -L https://github.com/tektoncd/dashboard/releases/latest/download/tekton-webhooks-extension-release.yaml \
+    curl -L https://github.com/tektoncd/dashboard/releases/latest/download/webhooks-extensionrelease.yaml \
     | sed 's/tekton-pipelines/TARGET_NAMESPACE/g' \
     | sed -e 's/IPADDRESS/YOUR_IP_ADDRESS/g' \
     | kubectl apply -f -
