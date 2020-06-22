@@ -22,4 +22,4 @@ export GITHUB_REPO="https://github.ibm.com/MNUTTALL/simple"
 
 # This is your IP address if using docker-desktop.  This will be substituted into the value of the WEBHOOK_CALLBACK_URL
 # in the deployment yaml.
-export IPADDRESS=1.2.3.4
+export IPADDRESS=9.163.8.65

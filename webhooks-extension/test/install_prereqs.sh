@@ -9,6 +9,6 @@ export test_dir="${tekton_repo_dir}/webhooks-extension/test"
 source ${test_dir}/config.sh
 source ${test_dir}/util.sh
 
-install_tekton ${TEKTON_VERSION}
-install_tekton_triggers ${TEKTON_TRIGGERS_VERSION}
+# install_tekton ${TEKTON_VERSION}
+# install_tekton_triggers ${TEKTON_TRIGGERS_VERSION}
 install_nginx

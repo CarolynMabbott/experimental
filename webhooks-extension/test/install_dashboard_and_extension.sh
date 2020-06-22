@@ -46,6 +46,6 @@ check KO_DOCKER_REPO "export KO_DOCKER_REPO=docker.io/${DOCKERHUB_USERNAME}"
 echo -e "\n\nInstalling the $VERSION_TEXT of the Tekton Dashoard and Webhooks Extension into $DASHBOARD_INSTALL_NS namespace.\n"
 
 install_webhooks_extension $DASHBOARD_INSTALL_NS $VERSION
-install_dashboard $DASHBOARD_INSTALL_NS $VERSION
+# install_dashboard $DASHBOARD_INSTALL_NS $VERSION
 
 wait_for_ready_pods $DASHBOARD_INSTALL_NS 60 10
