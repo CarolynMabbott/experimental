@@ -1176,11 +1176,13 @@ func (r Resource) getWebhooksFromEventListener() ([]webhook, error) {
 func (r Resource) getHookFromTrigger(t v1alpha1.EventListenerTrigger, suffix string) webhook {
 	var releaseName, namespace, serviceaccount, pulltask, dockerreg, helmsecret, repo, gitSecret string
 	for _, binding := range t.Bindings {
-		b, err := r.TriggersClient.TriggersV1alpha1().TriggerBindings(r.Defaults.Namespace).Get(binding.Name, metav1.GetOptions{})
-		logging.Log.Error("b %s", b)
+		b, err := r.TriggersClient.TriggersV1alpha1().TriggerBindings(r.Defaults.Namespace).Get(binding.Ref, metav1.GetOptions{})
+		logging.Log.Errorf("binding  %s", binding)
+		logging.Log.Errorf("binding name %s", binding.Ref)
+		logging.Log.Errorf("b %v", b.Spec)
 		if err != nil {
 			logging.Log.Error("err %s", err)
-			logging.Log.Errorf("Error retrieving webhook information in full - could not find required TriggerBinding %s", binding.Name)
+			logging.Log.Errorf("Error retrieving webhook information in full - could not find required TriggerBinding %s", binding.Ref)
 			t.Name = "Broken webhook! Resources not found"
 		}
 		for _, param := range b.Spec.Params {

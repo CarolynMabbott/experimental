@@ -14,4 +14,4 @@ spec:
         - name: webhooks-extension
           env:
           - name: WEBHOOK_CALLBACK_URL
-            value: http://listener.9.211.92.209.nip.io
+            value: http://listener.9.163.8.65.nip.io
